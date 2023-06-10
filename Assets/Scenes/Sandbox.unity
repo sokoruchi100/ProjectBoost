@@ -513,6 +513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 699917358757350178, guid: da0cc4f72c008df4587d97e6ffa8544f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Damager
+      objectReference: {fileID: 0}
     - target: {fileID: 4194326003721028534, guid: da0cc4f72c008df4587d97e6ffa8544f,
         type: 3}
       propertyPath: m_RootOrder
@@ -750,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 8260235489388027971, guid: ec6636cc7c5999d4da558847e6209dcb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8260235489388027971, guid: ec6636cc7c5999d4da558847e6209dcb,
         type: 3}

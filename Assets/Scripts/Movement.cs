@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public event EventHandler OnThrust;
+    public event EventHandler OnStopThrust;
+
     private Rigidbody rigidbody;
     [SerializeField] private float thrustForce;
     [SerializeField] private float rotationSpeed;
@@ -21,6 +25,11 @@ public class Movement : MonoBehaviour
     private void ProcessThrust() {
         if (Input.GetKey(KeyCode.Space)) {
             rigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * thrustForce);
+            OnThrust?.Invoke(this, EventArgs.Empty);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space)) {
+            OnStopThrust?.Invoke(this, EventArgs.Empty);
         }
     }
 
