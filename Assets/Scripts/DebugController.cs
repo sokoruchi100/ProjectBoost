@@ -35,5 +35,10 @@ public class DebugController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G)) {
             isGodmodeOn = !isGodmodeOn;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Debug.Log("Application Quit!");
+            Application.Quit();
+        }
     }
 }
