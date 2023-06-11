@@ -393,3 +393,5 @@ FodyWeavers.xsd
 /Unity.VSCode.Editor.csproj
 /UnityEditor.TestRunner.csproj
 /UnityEngine.TestRunner.csproj
+/Cinemachine.csproj
+/com.unity.cinemachine.editor.csproj

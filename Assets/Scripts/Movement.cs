@@ -7,6 +7,10 @@ public class Movement : MonoBehaviour
 {
     public event EventHandler OnThrust;
     public event EventHandler OnStopThrust;
+    public event EventHandler OnRotateLeft;
+    public event EventHandler OnStopRotateLeft;
+    public event EventHandler OnRotateRight;
+    public event EventHandler OnStopRotateRight;
 
     private Rigidbody rigidbody;
     [SerializeField] private float thrustForce;
@@ -37,8 +41,17 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A)) {
             ApplyRotation(Vector3.forward);
+            OnRotateLeft?.Invoke(this, EventArgs.Empty);
         } else if (Input.GetKey(KeyCode.D)) {
             ApplyRotation(Vector3.back);
+            OnRotateRight?.Invoke(this, EventArgs.Empty);
+        }
+
+        if (Input.GetKeyUp(KeyCode.A)) {
+            OnStopRotateLeft?.Invoke(this, EventArgs.Empty);
+        }
+        if (Input.GetKeyUp(KeyCode.D)) {
+            OnStopRotateRight?.Invoke(this, EventArgs.Empty);
         }
     }
 
